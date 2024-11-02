@@ -13,6 +13,6 @@ def contact_us(request):
     return render(request, 'contact-us.html')
 
 def products(request):
-    products = Product.objects.all()
-    context = {'products':products}
-    return render(request, 'products.html', context)
+    # products = Product.objects.all()
+    # context = {'products':products}
+    return render(request, 'products.html')

@@ -24,13 +24,13 @@
             <h2 class="section-title">Our Fresh Favorites</h2>
             <!-- Grid to display product cards -->
             <div class="product-grid">
-                {% for product in products %}
+                {% comment %} {% for product in products %}
                     <div class="product-card">
                         <!-- Product image and name -->
                         <img src="{{ product.image.url }}" alt="{{ product.product_name }}">
                         <p>{{ product.product_name }}</p>
                     </div>
-                {% endfor %}
+                {% endfor %} {% endcomment %}
             </div>
         </div>
     </section>
