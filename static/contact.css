@@ -25,6 +25,7 @@
 .contact-info h3,
 .contact-location h3 {
     padding-bottom: 10px;
+    color:#eee;
     margin-bottom: 20px;
     font-size: 1.8rem; /* Increased size for better visibility */
     border-bottom: 1px solid #eee; /* Underline effect for separation */
