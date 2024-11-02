@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Fresh Fruits and Vegetables - Products</title>
+{% endblock %}
+
+{% block meta %}
+    <!-- Meta description and keywords for SEO -->
+    <meta name="description" content="Fresh Harvest Market is your premier destination for premium fruits and vegetables, offering wholesale supply, in-store shopping, and delivery services. Quality produce delivered fresh to your table.">
+    <meta name="keywords" content="fresh fruits, vegetables, wholesale supply, grocery delivery, premium produce, organic fruits, fresh vegetables, Al Ain, Abu Dhabi">
+{% endblock %}
+
+{% block styles %}
+    {{ block.super }}
+    <!-- Link to the custom CSS file for product styling -->
+    <link rel="stylesheet" href="{% static 'products.css' %}">
+{% endblock %}
+
+{% block body %}
+    <section class="products-section">
+        <div class="container">
+            <!-- Section title -->
+            <h2 class="section-title">Our Fresh Favorites</h2>
+            <!-- Grid to display product cards -->
+            <div class="product-grid">
+                {% for product in products %}
+                    <div class="product-card">
+                        <!-- Product image and name -->
+                        <img src="{{ product.image.url }}" alt="{{ product.product_name }}">
+                        <p>{{ product.product_name }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

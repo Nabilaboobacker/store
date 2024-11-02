@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'favicon-96x96.png' %}" type="image/x-icon">
+    
+    {% block title %}{% endblock %}
+    {% block meta %}{% endblock %}
+    
+    {% comment %} Fontawesome CDN {% endcomment %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    {% endblock %}
+</head>
+
+<body>
+    {% comment %} Navbar {% endcomment %}
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'products' %}">Products</a>
+                <a href="{% url 'contact_us' %}">Contact</a>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    {% comment %} End Navbar {% endcomment %}
+
+    {% block body %}{% endblock %}
+
+    {% comment %} Contact Us Details {% endcomment %}
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="contact-intro">Address: Al Khibeesi, Al Meryal Road 2,
+            49B, Al Ain, UAE</p>
+        <div class="contact-links">
+            <a href="mailto:freshvegetable2018@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <span>|</span>
+            <a href="https://wa.me/971553944604">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <span>|</span>
+            <a href="tel:+971553944604">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+        <p class="address">For inquiries, please contact us at freshvegetable2018@gmail.com</p>
+    </section>
+    {% comment %} End Contact Us Details {% endcomment %}
+
+    {% comment %} Script for Hamburger Menu {% endcomment %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                // Optional: Toggle hamburger icon
+                const icon = this.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInside = navLinks.contains(event.target) || hamburger.contains(event.target);
+                if (!isClickInside && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = hamburger.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    const icon = hamburger.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                });
+            });
+        });
+    </script>
+    {% comment %} End Script for Hamburger Menu {% endcomment %}
+</body>
+
+</html>

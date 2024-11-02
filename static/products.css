@@ -1,0 +1,102 @@
+/* Responsive Product Cards Stylesheet */
+
+/* Base product section layout */
+.products-section {
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+
+/* Product grid layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+/* Product card styling */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;  /* Uniform image height */
+    object-fit: cover;  /* Maintain aspect ratio while filling space */
+    margin-bottom: 0.75rem;
+}
+
+.product-card p {
+    font-size: 1rem;
+    margin: 0;
+    color: #555;
+}
+
+/* Tablet Responsive Design (3 products per row) */
+@media screen and (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product-card img {
+        height: 220px;
+    }
+}
+
+/* Enhanced Mobile Responsive Design (1 product per row) */
+@media screen and (max-width: 640px) {
+    .products-section {
+        padding: 1rem 0;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;  /* Full width of container */
+        height: 500px;  /* Fixed height for uniform sizing */
+        margin: 0 auto;
+        padding: 1rem;
+        /* border: 1px solid #e0e0e0; */
+        overflow: hidden;  /* Ensure content stays within card */
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 400px;  /* Fixed height for images */
+        object-fit: cover;
+        margin-bottom: 0.75rem;
+    }
+
+    .product-card p {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        text-align: center;
+        margin: 0;
+        padding: 0 0.5rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+}
+

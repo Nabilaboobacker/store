@@ -1,0 +1,95 @@
+/* Contact Page Responsive Layout */
+.contact-section {
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    overflow: hidden;
+}
+
+.contact-info,
+.contact-location {
+    padding: 30px;
+}
+
+/* Headings */
+.contact-info h3,
+.contact-location h3 {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8rem; /* Increased size for better visibility */
+    color: #2c3e50; /* Darker color for headings */
+    border-bottom: 1px solid #eee; /* Underline effect for separation */
+}
+
+/* Paragraph */
+.contact-info p {
+    font-size: 1.1rem; /* Adjusted size for readability */
+    color: #555; /* Slightly lighter color for paragraph text */
+    margin-bottom: 20px; /* Spacing below the paragraph */
+}
+
+/* Info List */
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info ul li strong {
+    min-width: 120px; /* Slightly increased for better alignment */
+    margin-right: 15px;
+    font-weight: 600;
+    font-size: 1.1rem; /* Consistent sizing with other strong texts */
+    color: #34495e; /* A more muted color for better contrast */
+}
+
+.contact-info ul li a {
+    text-decoration: none;
+    color: #eee; /* Normal font color to match other texts */
+    font-weight: 500;
+    font-size: 1rem; /* Standard size for better readability */
+}
+
+/* Mobile Responsive Design */
+@media screen and (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info,
+    .contact-location {
+        padding: 20px;
+    }
+
+    .contact-info ul li {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .contact-info ul li strong {
+        margin-bottom: 5px;
+        min-width: auto;
+    }
+}
+
+/* Accessibility Enhancements */
+.contact-info ul li a:focus,
+.contact-location iframe:focus {
+    outline-offset: 2px;
+}

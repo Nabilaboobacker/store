@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Fresh Vegetables and Fruits-Home</title>
+{% endblock %}
+
+{% block meta %}
+<meta name="description" content="Fresh Harvest Market is your premier destination for premium fruits and vegetables, offering wholesale supply, in-store shopping, and delivery services. Quality produce delivered fresh to your table.">
+<meta name="keywords" content="fresh fruits, vegetables, wholesale supply, grocery delivery, premium produce, organic fruits, fresh vegetables, Al Ain, Abu Dhabi">
+{% endblock %}
+
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+{% block body %}
+
+    {% comment %} Brand Representation {% endcomment %}
+    <section id="home">
+        <h1 class="company-name">Fresh Vegetables and Fruits</h1>
+        <p class="tagline">Wholesale, Instore, and Delivery Services</p>
+    </section>
+    {% comment %} Brand Representation {% endcomment %}
+
+    {% comment %} About Section {% endcomment %}
+    <section id="about">
+        <h2 class="section-title">Welcome to Fresh Vegetables and Fruits</h2>
+        <div class="about-content">
+            <p>Fresh Vegetables and Fruits is your premier destination for premium fruits and vegetables sourced from the finest farms across the globe. We take pride in delivering farm-fresh produce directly to your table, ensuring quality and freshness in every bite.</p>
+        </div>
+    </section>
+
+    {% comment %} Our Services {% endcomment %}
+    <section id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-image">WS</div>
+                <h3 class="service-title">Wholesale Supply</h3>
+                <p class="service-description">Offering competitive bulk pricing, flexible payment terms, and reliable delivery schedules, ensuring quality in every batch.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">IS</div>
+                <h3 class="service-title">In-Store Shopping</h3>
+                <p class="service-description">Discover a wide selection of fresh produce with seasonal specials, expert staff assistance, and a clean shopping environment.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">DS</div>
+                <h3 class="service-title">Delivery Services</h3>
+                <p class="service-description">Convenient same-day delivery, personalized orders, and safe, contactless delivery right to your door.</p>
+            </div>
+        </div>
+    </section>
+    {% comment %} Our Services {% endcomment %}
+
+{% endblock %}

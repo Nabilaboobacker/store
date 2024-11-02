@@ -1,0 +1,175 @@
+/* Root Variables */
+:root {
+    /* Color Palette */
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #2d2d2d;
+    --accent-green: #4CAF50;
+    --accent-orange: #FF9800;
+    --accent-light: #81C784;
+    --text-light: #ffffff;
+    --text-muted: #bbbbbb;
+    --hover-bg: rgba(76, 175, 80, 0.1);
+}
+
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Navigation Styles */
+.navbar {
+    background-color: transparent;
+    padding: 1rem 2rem;
+    width: 100%;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-green);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    padding: 0.5rem;
+}
+
+/* Section Base Styles */
+section {
+    padding: 5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--accent-orange);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Contact Section Styles */
+#contact {
+    background-color: var(--secondary-bg);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.contact-intro {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.contact-links a {
+    color: var(--accent-green);
+    text-decoration: none;
+}
+
+.contact-links span {
+    color: var(--text-light);
+}
+
+.address {
+    color: var(--text-muted);
+    margin-top: 1rem;
+    font-size: 15px;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Hamburger Menu */
+    .hamburger {
+        display: block;
+    }
+
+    .nav-content {
+        justify-content: flex-end;
+    }
+
+    /* Mobile Navigation */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--secondary-bg);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        width: 100%;
+        text-align: center;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    /* Mobile Section Styles */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Fresh Fruits and Vegetables</title>
+{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Fresh Harvest Market is your premier destination for premium fruits and vegetables, offering wholesale supply, in-store shopping, and delivery services. Quality produce delivered fresh to your table.">
+    <meta name="keywords" content="fresh fruits, vegetables, wholesale supply, grocery delivery, premium produce, organic fruits, fresh vegetables, Al Ain, Abu Dhabi">
+{% endblock %}
+
+{% block styles %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+{% endblock %}
+
+{% block body %}
+    <!-- About Section -->
+    <section id="about-page">
+        <h2 class="section-title">About Fresh Vegetables and Fruits</h2>
+        <div class="about-content">
+            <p>
+                Welcome to Fresh Vegetables and Fruits (Trade Name: FRESH VEGETABLES AND FRUITS SHOP - L.L.C - O.P.C), your trusted source for premium-quality fruits and vegetables. Our produce is sourced from the finest farms around the world, carefully selected and handpicked to bring you vibrant, fresh flavors and exceptional quality with every bite.
+                <br><br>
+                We are committed to meeting the diverse needs of our customers through a variety of services, including bulk wholesale supply, convenient in-store shopping, and swift delivery for nearby locations. Whether you’re looking for locally grown staples or exotic imports, our curated selection ensures freshness and variety on your table.
+                <br><br>
+                Fresh Vegetables and Fruits operates under full licensing (License No. CN-1124159), adhering to the highest standards of safety and quality control. Experience the joy of farm-to-table freshness, where every product is delivered with care, integrity, and a dedication to nourishing your lifestyle.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Stories Section -->
+    <h2 class="section-title">Our Stories</h2>
+    <section id="shop-images">
+        <div class="image-container">
+            <img src="{% static 'download.jpg' %}" alt="Shop Image 1">
+        </div>
+        <div class="image-container">
+            <img src="{% static 'Store.jpeg' %}" alt="Shop Image 2">
+        </div>
+    </section>
+{% endblock %}

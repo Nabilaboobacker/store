@@ -1,0 +1,62 @@
+/* Shop Images Layout
+   ========================================================================== */
+   #shop-images {
+    /* Responsive container with centered content */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+
+    /* Flexible layout with wrapped items */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.image-container {
+    /* Two-column layout on desktop */
+    flex: 0 0 calc(50% - 10px);
+    max-width: 380px;
+}
+
+.image-container img {
+    /* Full-width responsive images */
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+
+    /* Subtle border and smooth transitions */
+    border: 1px solid #e0e0e0;
+    transition: 
+        transform 0.3s ease, 
+        box-shadow 0.3s ease;
+}
+
+/* Interaction and Accessibility Styles */
+.image-container img:hover {
+    /* Slight scale and shadow on hover */
+    transform: scale(1.03);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img:focus {
+    /* Clear focus state for keyboard navigation */
+    outline: 2px solid #007bff;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Responsive Design
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    .image-container {
+        /* Full-width layout on mobile */
+        flex: 0 0 100%;
+        max-width: 75%;
+    }
+    
+    .image-container img {
+        /* Reduced image height for mobile */
+        height: 300px;
+    }
+}
