@@ -25,66 +25,13 @@
             <!-- Grid to display product cards -->
             <div class="product-grid">
                 {% comment %} product {% endcomment %}
+                {% for product in products %}
                     <div class="product-card">
                         <!-- Product image and name -->
-                        <img src="{% static 'Mushroom.jpg' %}" alt="Mushroom">
-                        <p>Mushroom</p>
+                        <img src="{{ MEDIA_URL }} {{ product.image.url }}" alt="{{ product.product_name }}">
+                        <p>{{ product.product_name }}</p>
                     </div>
-                    <div class="product-card">
-                        <!-- Product image and name -->
-                        <img src="{% static 'fig.jpg' %}" alt="fig">
-                        <p>Fig</p>
-                    </div>
-                    <div class="product-card">
-                        <!-- Product image and name -->
-                        <img src="{% static 'Tomato.jpg' %}" alt="Tomato">
-                        <p>Tomato</p>
-                    </div>
-                    <div class="product-card">
-                        <!-- Product image and name -->
-                        <img src="{% static 'Strawberry.jpg' %}" alt="Strawberry">
-                        <p>Strawberry</p>
-                    </div>
-                    <div class="product-card">
-                        <!-- Product image and name -->
-                        <img src="{% static 'Cherry.jpg' %}" alt="Cherry">
-                        <p>Cherry</p>
-                    </div>
-                    <div class="product-card">
-                        <!-- Product image and name -->
-                        <img src="{% static 'Blackberry.jpg' %}" alt="Blackberry">
-                        <p>Blackberry</p>
-                    </div>
-                    <div class="product-card">
-                        <!-- Product image and name -->
-                        <img src="{% static 'Blueberry.jpg' %}" alt="Blueberry">
-                        <p>Blueberry</p>
-                    </div>
-                    <div class="product-card">
-                        <!-- Product image and name -->
-                        <img src="{% static 'Cherry tomatoes.jpg' %}" alt="Cherry tomatoes">
-                        <p>Cherry tomatoes</p>
-                    </div>
-                    <div class="product-card">
-                        <!-- Product image and name -->
-                        <img src="{% static 'Apple.jpg' %}" alt="{{ Apple }}">
-                        <p>Apple</p>
-                    </div>
-                    <div class="product-card">
-                        <!-- Product image and name -->
-                        <img src="{% static 'Mushroom.jpg' %}" alt="{{ Mushroom }}">
-                        <p>Mushroom</p>
-                    </div>
-                    <div class="product-card">
-                        <!-- Product image and name -->
-                        <img src="{% static 'Mushroom.jpg' %}" alt="{{ Mushroom }}">
-                        <p>Mushroom</p>
-                    </div>
-                    <div class="product-card">
-                        <!-- Product image and name -->
-                        <img src="{% static 'Mushroom.jpg' %}" alt="{{ Mushroom }}">
-                        <p>Mushroom</p>
-                    </div>
+                {% endfor %}
                 {% comment %} Product {% endcomment %}
             </div>
         </div>
